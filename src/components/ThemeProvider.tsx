@@ -14,7 +14,7 @@ interface ThemeContextProps {
   setTheme: (theme: Theme) => void;
 }
 
-// Contexを作成
+// Contextを作成
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined
 );
