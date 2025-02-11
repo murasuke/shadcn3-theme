@@ -13,9 +13,9 @@
 
 また、ググってもテーマ切り替え方法が見つからなかったため、手順をまとめました
 
-* [gitHubのリポジトリ](https://github.com/murasuke/shadcn3-theme) (https://github.com/murasuke/shadcn3-theme)
+* [GitHubのリポジトリ](https://github.com/murasuke/shadcn3-theme) (https://github.com/murasuke/shadcn3-theme)
 
-* [gitHub Pages(今回作成したテーマ切り替えページ)](https://murasuke.github.io/shadcn3-theme/) (https://murasuke.github.io/shadcn3-theme/)
+* [GitHub Pages(今回作成したテーマ切り替えページ)](https://murasuke.github.io/shadcn3-theme/) (https://murasuke.github.io/shadcn3-theme/)
 
 
 ## 環境構築
@@ -598,7 +598,7 @@ createRoot(document.getElementById('root')!).render(
 
 ## GitHub Pagesで公開(おまけ)
 
-gitHubにリポジトリを作成＆push後、作成したWebアプリを[gitHub Pages](https://docs.github.com/ja/pages)で公開します
+GitHubにリポジトリを作成＆push後、作成したWebアプリを[GitHub Pages](https://docs.github.com/ja/pages)で公開します
 
 1. [gh-pages](https://www.npmjs.com/package/gh-pages)をインストールする
 
