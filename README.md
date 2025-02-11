@@ -13,6 +13,11 @@
 
 また、ググってもテーマ切り替え方法が見つからなかったため、手順をまとめました
 
+* [gitHubのリポジトリ](https://github.com/murasuke/shadcn3-theme) (https://github.com/murasuke/shadcn3-theme)
+
+* [gitHub Pages(今回作成したテーマ切り替えページ)](https://murasuke.github.io/shadcn3-theme/) (https://murasuke.github.io/shadcn3-theme/)
+
+
 ## 環境構築
 
 ### React18.3 + Vite
@@ -589,3 +594,66 @@ createRoot(document.getElementById('root')!).render(
 * ダークモード & blue
 
 ![alt text](img/image-8.png)
+
+
+## GitHub Pagesで公開(おまけ)
+
+gitHubにリポジトリを作成＆push後、作成したWebアプリを[gitHub Pages](https://docs.github.com/ja/pages)で公開します
+
+1. [gh-pages](https://www.npmjs.com/package/gh-pages)をインストールする
+
+```bash
+npm i gh-pages
+```
+
+2.  `package.json`のscriptsにデプロイ用コマンドを追加
+
+```json:package.json
+{
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+```
+
+3. `vite.config.ts`に`base`の設定を追加する
+
+`https://<USERNAME>.github.io/<リポジトリ名>/` にデプロイする場合は`base`に`/<リポジトリ名>/`をセットする
+
+```diff
+import { defineConfig } from 'vite';
+import path from 'path';
+import react from '@vitejs/plugin-react';
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
++  base: '/shadcn3-theme/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+});
+
+```
+
+* デプロイ実行
+
+リリースビルド`npm run build`行った後、デプロイを行います
+
+```bash
+npm run build
+npm run deploy
+
+> shadcn3-theme@0.0.0 deploy
+> gh-pages -d dist
+
+Published
+```
+
+
+* 動作確認
+
+下記URLでテーマ切り替えサンプルアプリを試すことができるようになりました
+
+https://murasuke.github.io/shadcn3-theme/
