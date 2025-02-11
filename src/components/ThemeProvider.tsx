@@ -25,9 +25,9 @@ export const ThemeContext = createContext<ThemeContextProps | undefined>(
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     // ブラウザに保存したテーマを復元
-    const defalutTheme: Theme = { dark_mode: false, color: 'mono' };
+    const defaultTheme: Theme = { dark_mode: false, color: 'mono' };
     const item = localStorage.getItem('shadcn-theme');
-    return item ? JSON.parse(item) : defalutTheme;
+    return item ? JSON.parse(item) : defaultTheme;
   });
 
   useEffect(() => {
