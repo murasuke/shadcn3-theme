@@ -47,7 +47,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('shadcn-theme', JSON.stringify(theme));
   }, [theme]);
 
-  // Provider配下のコンポーネントでは、Contex経由で現在選択中のテーマ(theme)と、その変更関数(setTheme())を受け取ることができる
+  // Provider配下のコンポーネントでは、Context経由で現在選択中のテーマ(theme)と、その変更関数(setTheme())を受け取ることができる
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
